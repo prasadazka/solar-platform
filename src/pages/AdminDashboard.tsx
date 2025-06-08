@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import { 
   Users, 
   Building, 
@@ -31,6 +32,7 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 const AdminDashboard: React.FC = () => {
   const { language } = useThemeStore();
   const { user } = useAuthStore();
+  const navigate = useNavigate();
 
   // Enhanced mock data for charts
   const platformGrowth = [
@@ -475,7 +477,7 @@ const AdminDashboard: React.FC = () => {
                   transition={{ delay: 0.5 + index * 0.1 }}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => window.location.href = action.route}
+                  onClick={() => navigate(action.route)}
                   className="group relative bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl dark:ring-1 dark:ring-gray-700 border border-gray-100 dark:border-gray-700 hover:shadow-2xl transition-all duration-300 text-left overflow-hidden"
                 >
                   {/* Background Gradient */}
