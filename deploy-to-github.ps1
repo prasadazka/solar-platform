@@ -1,10 +1,10 @@
 # RABHAN GitHub Pages Deployment Script
-# Replace YOUR_GITHUB_USERNAME with your actual GitHub username
+# GitHub Username: prasad25525
 
 Write-Host "🌞 RABHAN - Deploying to GitHub Pages..." -ForegroundColor Green
 
-# Step 1: Add remote repository (replace YOUR_GITHUB_USERNAME)
-$GITHUB_USERNAME = "YOUR_GITHUB_USERNAME"
+# Step 1: Add remote repository
+$GITHUB_USERNAME = "prasad25525"
 $REPO_URL = "https://github.com/$GITHUB_USERNAME/rabhan-solar-platform.git"
 
 Write-Host "📡 Adding remote repository..." -ForegroundColor Yellow
