@@ -25,5 +25,5 @@ export default defineConfig({
     }
   },
   // Configure for GitHub Pages deployment
-  base: process.env.NODE_ENV === 'production' ? '/BNPL_Solar/' : '/'
+  base: process.env.NODE_ENV === 'production' ? '/rabhan-solar-platform/' : '/'
 })
