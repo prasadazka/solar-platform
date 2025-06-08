@@ -115,7 +115,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename={import.meta.env.PROD ? '/solar-platform' : '/'}>
       <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-teal-50 dark:from-slate-900 dark:via-gray-900 dark:to-slate-800 transition-colors duration-300">
         <Routes>
           {/* Public Routes */}
