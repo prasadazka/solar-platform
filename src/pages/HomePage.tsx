@@ -95,8 +95,8 @@ const HomePage: React.FC = () => {
       icon: Leaf,
       title: language === 'en' ? 'Environmental Impact' : 'التأثير البيئي',
       description: language === 'en' 
-        ? 'Track your carbon footprint reduction and contribute to Saudi Vision 2030'
-        : 'تتبع تقليل بصمتك الكربونية وساهم في رؤية السعودية 2030',
+        ? 'Track your environmental impact and carbon footprint reduction'
+        : 'تتبع تأثيرك البيئي وتقليل بصمتك الكربونية',
       color: 'teal'
     }
   ];
@@ -166,15 +166,6 @@ const HomePage: React.FC = () => {
               transition={{ duration: 0.8 }}
               className="text-center lg:text-left rtl:lg:text-right"
             >
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center space-x-2 rtl:space-x-reverse bg-emerald-100 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 px-4 py-2 rounded-full text-sm font-medium mb-6"
-              >
-                <Leaf className="w-4 h-4" />
-                <span>{language === 'en' ? 'Supporting Saudi Net Zero 2060 Goal' : 'دعم هدف السعودية لصافي الصفر 2060'}</span>
-              </motion.div>
 
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
                 <span className="block">
@@ -187,8 +178,8 @@ const HomePage: React.FC = () => {
 
               <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl">
                 {language === 'en' 
-                  ? 'Powering Saudi Arabia\'s Net Zero 2060 vision through accessible solar energy. Transform your home or business with clean energy. Get flexible 12 to 30 monthly installment plans with 0% interest.'
-                  : 'تعزيز رؤية السعودية لصافي الصفر 2060 من خلال الطاقة الشمسية المتاحة. حوّل منزلك أو عملك بالطاقة النظيفة. احصل على خطط دفع مرنة من 12 إلى 30 شهر بدون فوائد.'
+                  ? 'Transform your home or business with clean solar energy. Get flexible 12 to 30 monthly installment plans with 0% interest and start saving immediately.'
+                  : 'حوّل منزلك أو عملك بالطاقة الشمسية النظيفة. احصل على خطط دفع مرنة من 12 إلى 30 شهر بدون فوائد وابدأ التوفير فوراً.'
                 }
               </p>
 
@@ -350,8 +341,8 @@ const HomePage: React.FC = () => {
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               {language === 'en' 
-                ? 'We make solar energy accessible, affordable, and hassle-free for every Saudi home and business, contributing to the Kingdom\'s Net Zero 2060 commitment.'
-                : 'نجعل الطاقة الشمسية متاحة وبأسعار معقولة وبدون متاعب لكل منزل وعمل سعودي، مساهمين في التزام المملكة بصافي الصفر 2060.'
+                ? 'We make solar energy accessible, affordable, and hassle-free for every Saudi home and business.'
+                : 'نجعل الطاقة الشمسية متاحة وبأسعار معقولة وبدون متاعب لكل منزل وعمل سعودي.'
               }
             </p>
           </motion.div>
@@ -386,118 +377,6 @@ const HomePage: React.FC = () => {
         </div>
       </section>
 
-      {/* Saudi Net Zero Mission Section */}
-      <section className="py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50 dark:from-green-900/20 dark:via-emerald-900/20 dark:to-teal-900/20 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-10 w-32 h-32 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse"></div>
-          <div className="absolute bottom-20 left-10 w-40 h-40 bg-emerald-300 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <div className="inline-flex items-center space-x-2 rtl:space-x-reverse bg-green-100 dark:bg-green-900/30 text-green-800 dark:text-green-300 px-4 py-2 rounded-full text-sm font-medium mb-6">
-              <Globe className="w-4 h-4" />
-              <span>{language === 'en' ? 'Saudi Net Zero 2060' : 'صافي الصفر السعودي 2060'}</span>
-            </div>
-            
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-              {language === 'en' ? 'Contributing to Saudi Arabia\'s Climate Vision' : 'المساهمة في رؤية السعودية المناخية'}
-            </h2>
-            
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-12">
-              {language === 'en' 
-                ? 'RABHAN is proud to support the Kingdom\'s ambitious commitment to achieve net zero greenhouse gas emissions by 2060, as announced by Crown Prince Mohammed bin Salman through the Saudi Green Initiative.'
-                : 'تفخر رابحان بدعم التزام المملكة الطموح لتحقيق صافي انبعاثات غازات الدفيئة صفر بحلول 2060، كما أعلن ولي العهد الأمير محمد بن سلمان من خلال المبادرة الخضراء السعودية.'
-              }
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
-            {[
-              {
-                icon: TrendingUp,
-                title: language === 'en' ? '50% Renewable by 2030' : '50% طاقة متجددة بحلول 2030',
-                description: language === 'en' ? 'Saudi Arabia aims to generate 50% of electricity from renewable sources by 2030' : 'تهدف السعودية لتوليد 50% من الكهرباء من مصادر متجددة بحلول 2030',
-                color: 'bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400'
-              },
-              {
-                icon: Leaf,
-                title: language === 'en' ? 'Net Zero by 2060' : 'صافي الصفر بحلول 2060',
-                description: language === 'en' ? 'Achieve net zero greenhouse gas emissions through the Circular Carbon Economy approach' : 'تحقيق صافي انبعاثات غازات الدفيئة صفر من خلال نهج الاقتصاد الكربوني الدائري',
-                color: 'bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400'
-              },
-              {
-                icon: DollarSign,
-                title: language === 'en' ? '$187B Investment' : '187 مليار دولار استثمار',
-                description: language === 'en' ? 'Saudi Arabia plans to invest $187 billion in renewable energy projects and green initiatives' : 'تخطط السعودية لاستثمار 187 مليار دولار في مشاريع الطاقة المتجددة والمبادرات الخضراء',
-                color: 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400'
-              },
-              {
-                icon: Globe,
-                title: language === 'en' ? '278M Tons CO2 Reduction' : 'تقليل 278 مليون طن CO2',
-                description: language === 'en' ? 'Target to reduce carbon dioxide equivalent emissions by 278 million tons annually by 2030' : 'هدف تقليل انبعاثات ثاني أكسيد الكربون المكافئة بـ 278 مليون طن سنوياً بحلول 2030',
-                color: 'bg-teal-100 dark:bg-teal-900/30 text-teal-600 dark:text-teal-400'
-              }
-            ].map((item, index) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                >
-                  <div className={`w-16 h-16 ${item.color.split(' ')[0]} ${item.color.split(' ')[1]} rounded-2xl flex items-center justify-center mb-4 mx-auto`}>
-                    <Icon className={`w-8 h-8 ${item.color.split(' ')[2]} ${item.color.split(' ')[3]}`} />
-                  </div>
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-3 text-center">
-                    {item.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 dark:text-gray-300 text-center leading-relaxed">
-                    {item.description}
-                  </p>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center"
-          >
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-8 shadow-xl max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
-                {language === 'en' ? 'How RABHAN Contributes' : 'كيف تساهم رابحان'}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6 leading-relaxed">
-                {language === 'en' 
-                  ? 'Every solar installation through RABHAN directly supports Saudi Arabia\'s renewable energy targets. By making solar energy accessible through our BNPL platform, we\'re accelerating the Kingdom\'s transition to clean energy and helping achieve the ambitious Net Zero 2060 goal.'
-                  : 'كل تركيب للطاقة الشمسية من خلال رابحان يدعم مباشرة أهداف السعودية للطاقة المتجددة. من خلال جعل الطاقة الشمسية متاحة عبر منصة الدفع المؤجل، نحن نسرع انتقال المملكة إلى الطاقة النظيفة ونساعد في تحقيق هدف صافي الصفر الطموح 2060.'
-                }
-              </p>
-              <a 
-                href="https://www.sgi.gov.sa/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="inline-flex items-center space-x-2 rtl:space-x-reverse text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 font-medium transition-colors duration-200"
-              >
-                <span>{language === 'en' ? 'Learn more about Saudi Green Initiative' : 'تعرف على المزيد حول المبادرة الخضراء السعودية'}</span>
-                <ArrowRight className="w-4 h-4" />
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
 
       {/* How It Works Section */}
       <section className="py-20 bg-white dark:bg-gray-800">
@@ -746,13 +625,13 @@ const HomePage: React.FC = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              {language === 'en' ? 'Ready to Join Saudi\'s Green Future?' : 'جاهز للانضمام لمستقبل السعودية الأخضر؟'}
+              {language === 'en' ? 'Ready to Start Saving with Solar?' : 'جاهز لبدء التوفير بالطاقة الشمسية؟'}
             </h2>
             
             <p className="text-xl text-emerald-100 mb-8 max-w-3xl mx-auto">
               {language === 'en' 
-                ? 'Join thousands of satisfied customers who are already saving money while contributing to Saudi Arabia\'s Net Zero 2060 vision through RABHAN.'
-                : 'انضم إلى آلاف العملاء الراضين الذين يوفرون المال بالفعل بينما يساهمون في رؤية السعودية صافي الصفر 2060 من خلال رابحان.'
+                ? 'Join thousands of satisfied customers who are already saving money and reducing their electricity bills through RABHAN.'
+                : 'انضم إلى آلاف العملاء الراضين الذين يوفرون المال بالفعل ويقللون فواتير الكهرباء من خلال رابحان.'
               }
             </p>
             
