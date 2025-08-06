@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import rabhanLogo from '../assets/rabhan_logo.svg';
 import { 
   Sun, 
   Moon, 
@@ -160,15 +161,18 @@ const Header: React.FC = () => {
   return (
     <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-700 sticky top-0 z-30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2 rtl:space-x-reverse">
-            <div className="w-10 h-10 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl flex items-center justify-center">
-              <Zap className="w-6 h-6 text-white" />
-            </div>
-            <span className="font-bold text-xl gradient-text">
-              {language === 'en' ? 'RABHAN' : 'رابحان'}
-            </span>
+          <Link to="/" className="flex items-center hover:opacity-80 transition-opacity duration-200">
+            <img 
+              src={rabhanLogo} 
+              alt="Rabhan Logo" 
+              className="w-24 h-24 md:w-32 md:h-32 object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+              }}
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -371,9 +375,15 @@ const Header: React.FC = () => {
                 {/* Modal Header */}
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center space-x-3 rtl:space-x-reverse flex-1 min-w-0">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                      <Zap className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                    </div>
+                    <img 
+                      src={rabhanLogo} 
+                      alt="Rabhan Logo" 
+                      className="w-24 h-24 sm:w-32 sm:h-32 object-contain flex-shrink-0"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.style.display = 'none';
+                      }}
+                    />
                     <div className="min-w-0 flex-1">
                       <h2 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-gray-100 truncate">
                         {language === 'en' ? 'Welcome Back' : 'مرحباً بعودتك'}

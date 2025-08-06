@@ -1,6 +1,7 @@
 import React from 'react';
 import { useThemeStore } from '../store';
 import { Zap, Heart, Leaf, Globe } from 'lucide-react';
+import rabhanLogo from '../assets/rabhan_logo.svg';
 
 const Footer: React.FC = () => {
   const { language } = useThemeStore();
@@ -12,9 +13,15 @@ const Footer: React.FC = () => {
           {/* Logo and Brand */}
           <div className="flex flex-col items-center md:items-start space-y-4">
             <div className="flex items-center space-x-2 rtl:space-x-reverse">
-              <div className="w-8 h-8 bg-gradient-to-r from-emerald-600 to-teal-600 rounded-lg flex items-center justify-center">
-                <Zap className="w-5 h-5 text-white" />
-              </div>
+              <img 
+                src={rabhanLogo} 
+                alt="Rabhan Logo" 
+                className="w-12 h-12 object-contain"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.style.display = 'none';
+                }}
+              />
               <span className="font-semibold text-gray-900 dark:text-gray-100">
                 {language === 'en' ? 'RABHAN' : 'رابحان'}
               </span>
@@ -45,26 +52,18 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Saudi Net Zero Goals Mission */}
+          {/* About */}
           <div className="flex flex-col items-center md:items-start space-y-3">
             <h3 className="font-semibold text-gray-900 dark:text-gray-100 text-center md:text-left rtl:md:text-right">
-              {language === 'en' ? 'Saudi Net Zero 2060' : 'صافي الصفر السعودي 2060'}
+              {language === 'en' ? 'About Rabhan' : 'عن رابحان'}
             </h3>
             <div className="text-sm text-gray-600 dark:text-gray-400 text-center md:text-left rtl:md:text-right">
               <p className="mb-2">
                 {language === 'en' 
-                  ? 'Supporting Saudi Arabia\'s commitment to achieve net zero greenhouse gas emissions by 2060 through the Saudi Green Initiative'
-                  : 'دعم التزام المملكة العربية السعودية بتحقيق صافي انبعاثات غازات الدفيئة صفر بحلول 2060 من خلال المبادرة الخضراء السعودية'
+                  ? 'Making solar energy accessible and affordable for every Saudi home and business through flexible financing solutions.'
+                  : 'جعل الطاقة الشمسية متاحة وبأسعار معقولة لكل منزل وعمل سعودي من خلال حلول التمويل المرنة.'
                 }
               </p>
-              <div className="flex items-center justify-center md:justify-start rtl:md:justify-end space-x-2 rtl:space-x-reverse">
-                <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
-                  <Leaf className="w-4 h-4 text-white" />
-                </div>
-                <span className="text-green-600 dark:text-green-400 font-medium">
-                  {language === 'en' ? 'Vision 2030 Aligned' : 'متوافق مع رؤية 2030'}
-                </span>
-              </div>
             </div>
           </div>
 
@@ -100,14 +99,6 @@ const Footer: React.FC = () => {
                 className="text-gray-600 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors duration-200 text-center md:text-left rtl:md:text-right"
               >
                 {language === 'en' ? 'Support Center' : 'مركز الدعم'}
-              </a>
-              <a 
-                href="https://www.sgi.gov.sa/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-600 dark:text-green-400 hover:text-green-700 dark:hover:text-green-300 transition-colors duration-200 text-center md:text-left rtl:md:text-right font-medium"
-              >
-                {language === 'en' ? 'Saudi Green Initiative' : 'المبادرة الخضراء السعودية'}
               </a>
             </div>
           </div>
